@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat de lau Widget</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="chat-box" id="chatBox">
+    <div class="message"><span class="username">@Laucha:</span> ¡Estilo Super Woobly activado! 💀🔥</div>
+  </div>
+
+  <script>
+    // Simulación de nuevos mensajes
+    setInterval(() => {
+      const chatBox = document.getElementById('chatBox');
+      const msg = document.createElement('div');
+      msg.className = 'message';
+      const randomUsers = ["@kbra", "@locoturro", "@vampirez", "@xdead"];
+      const randomText = ["🔥SKRT🔥", "Me explotó el overlay 💣", "💿 + 💀", "AYOOOOOOO"];
+      msg.innerHTML = `<span class="username">${randomUsers[Math.floor(Math.random() * randomUsers.length)]}:</span> ${randomText[Math.floor(Math.random() * randomText.length)]}`;
+      chatBox.appendChild(msg);
+      if (chatBox.childElementCount > 6) {
+        chatBox.removeChild(chatBox.firstChild);
+      }
+    }, 4000);
+  </script>
+</body>
+</html>
